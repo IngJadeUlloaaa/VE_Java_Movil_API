@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+
+    <!-- LinearLayout en la parte superior -->
+    <LinearLayout
+        android:id="@+id/headerLayoutHome"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bordes_inferior_barra"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Imagen pequeña del perfil -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewHomeImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="60dp"
+            app:cardElevation="4dp">
+
+            <!-- Imagen circular con ajuste -->
+            <ImageView
+                android:id="@+id/imageViewHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/circle_profile_bg"
+                android:contentDescription="@string/foto"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
+        </androidx.cardview.widget.CardView>
+
+        <!-- Título centrado -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/entorno_virtual"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/lilita_one"/>
+    </LinearLayout>
+
+
+
+    <!-- Contenedor para Misión -->
+    <LinearLayout
+        android:id="@+id/contenedor_mision"
+        android:layout_width="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@drawable/marco_home"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/headerLayoutHome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/contenedor_vision"
+        app:layout_constraintVertical_chainStyle="spread">
+
+        <TextView
+            android:id="@+id/text_mision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Misión"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/lilita_one"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/text_contenido_mision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Somos una institución privada de Educación Superior, con una gestión innovadora, eficiente y socialmente responsable."
+            android:textSize="19sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lilita_one"
+            android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <!-- Contenedor para Visión -->
+    <LinearLayout
+        android:id="@+id/contenedor_vision"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@drawable/marco_home"
+        android:padding="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintTop_toBottomOf="@id/contenedor_mision"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/toolbarBottomHome">
+
+        <TextView
+            android:id="@+id/text_vision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visión"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lilita_one"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/text_contenido_vision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="La Universidad de Managua, se consolidará como una institución de referencia, por la calidad en la formación de profesionales, su compromiso social, visibilidad científica."
+            android:textSize="19dp"
+            android:fontFamily="@font/lilita_one"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <!-- Barra de menú fija en la parte inferior -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarBottomHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bordes_superior_barra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/action_profile"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:src="@drawable/profile_icon"
+                android:contentDescription="@string/profile"
+                android:padding="12dp"
+                />
+
+            <ImageButton
+                android:id="@+id/action_pending_subject"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/clock_icon"
+                android:contentDescription="@string/pendingSubjectItem"
+                android:padding="12dp"/>
+
+            <ImageButton
+                android:id="@+id/action_home"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/baseline_home_24"
+                android:contentDescription="@string/pendingSubjectItem"
+                android:padding="12dp"/>
+
+            <ImageButton
+                android:id="@+id/action_subject_report"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/book_icn"
+                android:contentDescription="@string/subjectReport"
+                android:padding="12dp"/>
+
+            <ImageButton
+                android:id="@+id/action_audit"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/audit"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/auditoriaicn" />
+
+            <ImageButton
+                android:id="@+id/action_logout"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_logout_with_background"
+                android:contentDescription="@string/logOut"
+                android:padding="12dp"/>
+
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

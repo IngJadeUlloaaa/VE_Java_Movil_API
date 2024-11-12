@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Color de relleno (transparente o del color que prefieras) -->
+    <solid android:color="@android:color/transparent"/>
+
+    <!-- Borde de la imagen circular -->
+    <stroke
+        android:width="2dp"
+        android:color="@android:color/black"/> <!-- Puedes cambiar el color del borde -->
+
+    <!-- Tamaño del padding alrededor del contenido -->
+    <padding
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp"/>
+</shape>

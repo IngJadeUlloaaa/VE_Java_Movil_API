@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UserInfoActivity">
+
+    <!-- LinearLayout en la parte superior -->
+    <LinearLayout
+        android:id="@+id/headerLayoutProfile"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bordes_inferior_barra"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Imagen pequeña del perfil -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewUserInfoImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="60dp"
+            app:cardElevation="4dp">
+
+            <!-- Imagen circular con ajuste -->
+            <ImageView
+                android:id="@+id/imageViewUserInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/circle_profile_bg"
+                android:contentDescription="@string/foto"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
+        </androidx.cardview.widget.CardView>
+
+        <!-- Título centrado -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:fontFamily="@font/lilita_one"
+            android:text="@string/profile"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ScrollView que contiene el LinearLayout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/toolbarBottomUserInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayoutProfile">
+
+        <!-- Contenedor LinearLayout para los EditText y el Botón -->
+        <LinearLayout
+            android:id="@+id/linearLayoutContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
+
+            <!-- Contenedor con borde redondeado para la imagen -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewUserInfoPerfilImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="4dp">
+
+                <!-- Imagen circular con ajuste -->
+                <ImageView
+                    android:id="@+id/imageViewUserInfoPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_profile_bg"
+                    android:contentDescription="@string/foto"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Carrera -->
+            <TextView
+                android:id="@+id/textViewCarrera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/carrera"
+                android:fontFamily="@font/lilita_one"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewCarreraValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:textStyle="normal"
+                android:fontFamily="@font/lilita_one"
+                android:text="Ingeniería en Sistemas"
+                android:textSize="24dp" />
+
+
+            <!-- Turno -->
+            <TextView
+                android:id="@+id/textViewTurno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/lilita_one"
+                android:layout_marginTop="22dp"
+                android:text="@string/turno"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewTurnoValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="normal"
+                android:text="Matutino"
+                android:textSize="24dp" />
+
+            <!-- Número de Carnet -->
+            <TextView
+                android:id="@+id/textViewNumeroCarnet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/lilita_one"
+                android:layout_marginTop="22dp"
+                android:text="@string/carnet"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewNumeroCarnetValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="normal"
+                android:text="123456"
+                android:textSize="24dp" />
+
+            <!-- Nombre Completo -->
+            <TextView
+                android:id="@+id/textViewNombreCompleto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lilita_one"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="22dp"
+                android:text="@string/nombre"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewNombreCompletoValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="normal"
+                android:text="texto de prueba"
+                android:textSize="24dp" />
+
+            <!-- teléfono -->
+            <TextView
+                android:id="@+id/textViewTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lilita_one"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="22dp"
+                android:text="@string/telefono"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewTelefonoValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="normal"
+                android:text="0110201002"
+                android:textSize="24dp" />
+
+            <!-- Correo -->
+            <TextView
+                android:id="@+id/textViewCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/lilita_one"
+                android:text="@string/correo"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textViewCorreoValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="normal"
+                android:text="texto.prueba@example.com"
+                android:textSize="24dp" />
+
+            <!-- Botón Actualizar Datos dentro del LinearLayout -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonActualizar"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lilita_one"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:textColor="@color/white"
+                android:background="@drawable/gradient_bg_btn_login"
+                android:text="@string/update" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Barra de menú fija en la parte inferior -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarBottomUserInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bordes_superior_barra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/action_profile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:src="@drawable/profile_icon"
+                android:contentDescription="@string/profile"
+                android:padding="12dp"
+                />
+
+            <ImageButton
+                android:id="@+id/action_pending_subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/clock_icon"
+                android:contentDescription="@string/pendingSubjectItem"
+                android:padding="12dp"/>
+
+            <ImageButton
+                android:id="@+id/action_home"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/baseline_home_24"
+                android:contentDescription="@string/pendingSubjectItem"
+                android:padding="12dp"/>
+
+            <ImageButton
+                android:id="@+id/action_subject_report"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/book_icn"
+                android:contentDescription="@string/subjectReport"
+                android:padding="12dp"/>
+
+            <ImageButton
+                android:id="@+id/action_audit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/audit"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/auditoriaicn"
+                tools:layout_editor_absoluteX="-37dp"
+                tools:layout_editor_absoluteY="668dp" />
+
+            <ImageButton
+                android:id="@+id/action_logout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_logout_with_background"
+                android:contentDescription="@string/logOut"
+                android:padding="12dp"/>
+
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo rojo -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/trans" />
+        </shape>
+    </item>
+    <!-- Ícono de logout encima del fondo -->
+    <item android:drawable="@drawable/logout_icon" />
+</layer-list>

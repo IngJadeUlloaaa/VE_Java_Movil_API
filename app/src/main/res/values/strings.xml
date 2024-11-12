@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">UdeM</string>
+
+    <!--   boton entrar   -->
+    <string name="btn_entrar">ENTRAR</string>
+    <!--   tittle welcome  -->
+    <string name="tittle_welcome">BIENVENIDOS</string>
+    <!--    name univerity  -->
+    <string name="university_name">UNIVERSIDAD DE MANAGUA UdeM</string>
+
+    <!--   vista userInfo   -->
+    <string name="titleUser">¡USTED HA INICIADO SESION CORRECTAMENTE!</string>
+    <string name="carrera">CARRERA</string>
+    <string name="turno">TURNO</string>
+    <string name="carnet">CARNET</string>
+    <string name="nombre">NOMBRE</string>
+    <string name="correo">Correo</string>
+
+    <!--   vista title login   -->
+    <string name="titleLogin">Login</string>
+
+    <!--   color  A, R, AR auditory   -->
+    <string name="auditory">
+        <![CDATA[
+    <font color="#000000">  A = </font> <font color="#00FF00"> Aprobado</font>
+    <font color="#000000"> R = </font> <font color="#FF0000"> Reprobado</font>
+    <font color="#000000"> AR = </font> <font color="#FFA500"> Aprobado en Rescate</font>
+    ]]>
+    </string>
+
+    <!--   title auditory   -->
+    <string name="titleAuditory">Auditoría de Asignaturas</string>
+
+    <!--   vista auditory   -->
+    <string name="codigo"> Codigo </string>
+    <string name="asignatura"> Asignatura </string>
+    <string name="grado"> Grado </string>
+    <string name="notaFinal"> Nota final </string>
+    <string name="nota"> Nota </string>
+    <string name="rescate"> Rescate </string>
+    <string name="grupoClass">  Grupo </string>
+    <string name="classDay">  Dia </string>
+    <string name="classTime">  Hora </string>
+    <string name="aulaClass">  Aula </string>
+    <string name="classRoom">  Classroom </string>
+    <string name="telefono">  Telefono </string>
+
+    <!--   btn update data   -->
+    <string name="update">  ACTUALIZAR DATOS </string>
+
+    <!--   vista pendintSubject   -->
+    <string name="pendintSubject"> Asignatura Pendiente </string>
+    <string name="ofert"> Se oferta en </string>
+    <string name="SubjectReportInformation"> Lectura de aula: A = aula L: laboratorio BI = biblioteca LED = laboratorio de edición LRD = laboratorio de radio AU = auditorio   </string>
+
+    <!--   info item   -->
+    <string name="profile"> PERFIL </string>
+    <string name="audit"> AUDITORIA </string>
+    <string name="pendingSubjectItem"> ASIGNATURA PENDIENTE </string>
+    <string name="subjectReport"> BOLETA DE ASIGNATURA </string>
+    <string name="logOut"> SALIR </string>
+
+
+    <string name="matricula"> Matricula III cuatrimestre 2025 </string>
+    <string name="calificaciones"> Calificaciones III cuatrimestre 2025 </string>
+
+    <!--   info pic   -->
+    <string name="foto"> Foto de perfil </string>
+    <string name="imagen_de_decoracion">imagen de decoracion</string>
+    <string name="cambiar_foto">Cambiar foto</string>
+    <string name="password">Contraseña</string>
+    <string name="new_gmail">Correo nuevo</string>
+    <string name="new_password">Contraseña nueva</string>
+    <string name="entorno_virtual">Bienvenido al entorno virtual</string>
+</resources>

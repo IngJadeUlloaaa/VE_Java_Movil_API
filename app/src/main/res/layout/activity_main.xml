@@ -1,0 +1,64 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="16dp">
+
+
+    <!-- Imagen de la universidad -->
+    <ImageView
+        android:id="@+id/universityImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/logoudembienvenida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Título de Bienvenidos -->
+    <TextView
+        android:id="@+id/titleWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/oswald_bold"
+        android:text="@string/tittle_welcome"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/universityImage" />
+
+    <!-- Nombre de la Universidad -->
+    <TextView
+        android:id="@+id/universityName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/oswald_medium"
+        android:text="@string/university_name"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleWelcome" />
+
+    <!-- Botón de Entrar -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEntrar"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/button_background_main"
+        android:fontFamily="@font/orelegaone_regular"
+        android:text="@string/btn_entrar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/universityName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

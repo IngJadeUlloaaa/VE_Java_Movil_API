@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/profile_icon"
+        android:title="@string/profile"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_audit"
+        android:icon="@drawable/auditoriaicn"
+        android:title="@string/audit"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_pending_subject"
+        android:icon="@drawable/clock_icon"
+        android:title="@string/pendingSubjectItem"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_subject_report"
+        android:icon="@drawable/book_icn"
+        android:title="@string/subjectReport"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/logOut"
+        android:icon="@drawable/ic_logout_with_background"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_home"
+        android:title="Home"
+        android:icon="@drawable/ic_logout_with_background"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+
+
+
+</menu>

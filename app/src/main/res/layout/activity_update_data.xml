@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".UpdateDataActivity">
+
+    <!-- LinearLayout en la parte superior -->
+    <LinearLayout
+        android:id="@+id/headerLayoutUpdateData"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bordes_inferior_barra"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <!-- Título centrado -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/update"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/lilita_one"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ScrollView para hacer la vista desplazable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayoutUpdateData">
+
+        <!-- Contenedor LinearLayout dentro del ScrollView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <!-- Contenedor con borde redondeado para la imagen -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewProfileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="4dp">
+
+                <!-- Imagen circular con ajuste -->
+                <ImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle_profile_bg"
+                    android:contentDescription="@string/foto"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
+            </androidx.cardview.widget.CardView>
+
+            <!-- Botón para cambiar la foto -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonChangePhoto"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:background="@drawable/gradient_bg_btn_login"
+                android:layout_marginBottom="16dp"
+                android:text="@string/cambiar_foto"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="bold" />
+
+            <!-- texto para el teléfono -->
+            <TextView
+                android:id="@+id/textViewUpdateTelephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="22dp"
+                android:text="@string/telefono"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <!-- Input para el teléfono -->
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/input_gradient_bg"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="bold"
+                android:hint="Teléfono"
+                android:layout_marginBottom="10dp"
+                android:inputType="phone" />
+
+            <!-- texto para el Correo -->
+            <TextView
+                android:id="@+id/textViewUpdateGmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/correo"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <!-- Input para el correo -->
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/input_gradient_bg"
+                android:hint="@string/new_gmail"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:inputType="textEmailAddress" />
+
+            <!-- texto para la contraseña -->
+            <TextView
+                android:id="@+id/textViewUpdatePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/password"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <!-- Input para la contraseña -->
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:background="@drawable/input_gradient_bg"
+                android:layout_height="50dp"
+                android:layout_marginBottom="15dp"
+                android:hint="@string/new_password"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="bold"
+                android:inputType="textPassword" />
+
+            <!-- Botón Actualizar -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonActualizar"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/lilita_one"
+                android:textStyle="bold"
+                android:background="@drawable/gradient_bg_btn_login"
+                android:text="Actualizar" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Barra de menú fija en la parte inferior -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarBottomUpdateData"
+        android:layout_width="403dp"
+        android:layout_height="57dp"
+        android:background="@drawable/bordes_superior_barra"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/action_profile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/profile"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/profile_icon" />
+
+            <ImageButton
+                android:id="@+id/action_pending_subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/pendingSubjectItem"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/clock_icon" />
+
+            <ImageButton
+                android:id="@+id/action_home"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/baseline_home_24"
+                android:contentDescription="@string/pendingSubjectItem"
+                android:padding="12dp"/>
+
+            <ImageButton
+                android:id="@+id/action_subject_report"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/subjectReport"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/book_icn" />
+
+
+
+            <ImageButton
+                android:id="@+id/action_audit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/audit"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/auditoriaicn"
+                tools:layout_editor_absoluteX="-37dp"
+                tools:layout_editor_absoluteY="668dp" />
+
+            <ImageButton
+                android:id="@+id/action_logout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/logOut"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/ic_logout_with_background" />
+
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
