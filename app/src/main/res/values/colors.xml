@@ -17,7 +17,14 @@
     <color name="letra_input">#808080</color>
     <color name="gradient1">#6100FF</color>
     <color name="gradient2">#AB47BC</color>
-
-
     <color name="barraSuperiorEInferior">#211C33</color>
+
+
+
+
+    <color name="greenColor">#00FF0A</color>
+    <color name="redColor">#FF0000</color>
+    <color name="yellowColor">#FAFF00</color>
+
+
 </resources>

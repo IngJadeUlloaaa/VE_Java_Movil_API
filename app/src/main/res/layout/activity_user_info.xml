@@ -34,7 +34,6 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/circle_profile_bg"
-                android:contentDescription="@string/foto"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
         </androidx.cardview.widget.CardView>
@@ -48,7 +47,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:fontFamily="@font/lilita_one"
-            android:text="@string/profile"
+            android:text="profile"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -90,7 +89,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/circle_profile_bg"
-                    android:contentDescription="@string/foto"
                     android:scaleType="centerCrop"
                     android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
             </androidx.cardview.widget.CardView>
@@ -103,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/carrera"
+                android:text="carrera"
                 android:fontFamily="@font/lilita_one"
                 android:textColor="@color/black"
                 android:textStyle="bold"
@@ -129,7 +127,7 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/lilita_one"
                 android:layout_marginTop="22dp"
-                android:text="@string/turno"
+                android:text="turno"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="18sp" />
@@ -153,7 +151,7 @@
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/lilita_one"
                 android:layout_marginTop="22dp"
-                android:text="@string/carnet"
+                android:text="carnet"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="18sp" />
@@ -177,7 +175,7 @@
                 android:fontFamily="@font/lilita_one"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="22dp"
-                android:text="@string/nombre"
+                android:text="nombre"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="18sp" />
@@ -201,7 +199,7 @@
                 android:fontFamily="@font/lilita_one"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="22dp"
-                android:text="@string/telefono"
+                android:text="telefono"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="18sp" />
@@ -225,7 +223,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="22dp"
                 android:fontFamily="@font/lilita_one"
-                android:text="@string/correo"
+                android:text="correo"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="18sp" />
@@ -251,8 +249,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="40dp"
                 android:textColor="@color/white"
-                android:background="@drawable/gradient_bg_btn_login"
-                android:text="@string/update" />
+                android:background="@drawable/gradient_bg_btn_login"/>
 
         </LinearLayout>
     </ScrollView>
@@ -283,7 +280,7 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:src="@drawable/profile_icon"
-                android:contentDescription="@string/profile"
+
                 android:padding="12dp"
                 />
 
@@ -296,7 +293,7 @@
                 android:minHeight="48dp"
                 android:background="?attr/selectableItemBackground"
                 android:src="@drawable/clock_icon"
-                android:contentDescription="@string/pendingSubjectItem"
+
                 android:padding="12dp"/>
 
             <ImageButton
@@ -308,7 +305,7 @@
                 android:minHeight="48dp"
                 android:background="?attr/selectableItemBackground"
                 android:src="@drawable/baseline_home_24"
-                android:contentDescription="@string/pendingSubjectItem"
+
                 android:padding="12dp"/>
 
             <ImageButton
@@ -320,7 +317,7 @@
                 android:minHeight="48dp"
                 android:background="?attr/selectableItemBackground"
                 android:src="@drawable/book_icn"
-                android:contentDescription="@string/subjectReport"
+
                 android:padding="12dp"/>
 
             <ImageButton
@@ -329,7 +326,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/audit"
+
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
@@ -346,7 +343,7 @@
                 android:minHeight="48dp"
                 android:background="?attr/selectableItemBackground"
                 android:src="@drawable/ic_logout_with_background"
-                android:contentDescription="@string/logOut"
+
                 android:padding="12dp"/>
 
 

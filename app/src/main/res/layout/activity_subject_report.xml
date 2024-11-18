@@ -34,7 +34,6 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/circle_profile_bg"
-                android:contentDescription="@string/foto"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
         </androidx.cardview.widget.CardView>
@@ -47,7 +46,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/subjectReport"
+            android:text="subjectReport"
             android:fontFamily="@font/lilita_one"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -81,7 +80,7 @@
                 android:background="@drawable/bg_color_radius"
                 android:paddingBottom="16dp"
                 android:textAlignment="center"
-                android:text="@string/matricula"
+                android:text="matricula"
                 android:fontFamily="@font/lilita_one"
                 android:textColor="@color/white"
                 android:textSize="24sp"
@@ -119,7 +118,7 @@
                             android:textColor="@color/black"
                             android:fontFamily="@font/lilita_one"
                             android:textStyle="normal"
-                            android:text="@string/grupoClass"
+                            android:text="grupoClass"
                              />
 
                         <TextView
@@ -128,7 +127,7 @@
                             android:layout_weight="3"
                             android:gravity="center"
                             android:textColor="@color/black"
-                            android:text="@string/asignatura"
+                            android:text="asignatura"
                             android:fontFamily="@font/lilita_one"
                             android:textStyle="normal" />
 
@@ -138,7 +137,7 @@
                             android:layout_weight="3"
                             android:gravity="center"
                             android:textColor="@color/black"
-                            android:text="@string/classDay"
+                            android:text="classDay"
                             android:fontFamily="@font/lilita_one"
                             android:textStyle="normal" />
 
@@ -147,7 +146,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
                             android:gravity="center"
-                            android:text="@string/classTime"
+                            android:text="classTime"
                             android:textColor="@color/black"
                             android:fontFamily="@font/lilita_one"
                             android:textStyle="normal" />
@@ -158,7 +157,7 @@
                             android:layout_weight="2"
                             android:gravity="center"
                             android:textColor="@color/black"
-                            android:text="@string/aulaClass"
+                            android:text="aulaClass"
                             android:fontFamily="@font/lilita_one"
                             android:textStyle="normal" />
 
@@ -168,7 +167,7 @@
                             android:layout_weight="2"
                             android:fontFamily="@font/lilita_one"
                             android:gravity="center"
-                            android:text="@string/classRoom"
+                            android:text="classRoom"
                             android:textColor="@color/black"
                             android:textStyle="normal" />
                     </LinearLayout>
@@ -305,7 +304,7 @@
                 android:gravity="center"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/bg_color_radius"
-                android:text="@string/SubjectReportInformation"
+                android:text="SubjectReportInformation"
                 android:textColor="@color/white"
                 android:fontFamily="@font/lilita_one"
                 android:textStyle="normal"/>
@@ -320,7 +319,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/bg_color_radius"
                 android:paddingBottom="16dp"
-                android:text="@string/calificaciones"
+                android:text="/calificaciones"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:fontFamily="@font/lilita_one"
@@ -349,7 +348,7 @@
                         android:layout_weight="2"
                         android:gravity="center"
                         android:textColor="@color/black"
-                        android:text="@string/codigo"
+                        android:text="@/codigo"
                         android:fontFamily="@font/lilita_one"
                         android:textStyle="normal" />
 
@@ -359,7 +358,7 @@
                         android:layout_weight="2"
                         android:gravity="center"
                         android:textColor="@color/black"
-                        android:text="@string/asignatura"
+                        android:text="@/asignatura"
                         android:fontFamily="@font/lilita_one"
                         android:textStyle="normal"/>
 
@@ -369,7 +368,7 @@
                         android:layout_weight="2"
                         android:gravity="center"
                         android:textColor="@color/black"
-                        android:text="@string/nota"
+                        android:text="@/nota"
                         android:fontFamily="@font/lilita_one"
                         android:textStyle="normal" />
 
@@ -379,7 +378,7 @@
                         android:layout_weight="2"
                         android:gravity="center"
                         android:textColor="@color/black"
-                        android:text="@string/rescate"
+                        android:text="@/rescate"
                         android:fontFamily="@font/lilita_one"
                         android:textStyle="normal" />
 
@@ -486,7 +485,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/profile"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
@@ -498,7 +496,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/pendingSubjectItem"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
@@ -513,7 +510,6 @@
                 android:minHeight="48dp"
                 android:background="?attr/selectableItemBackground"
                 android:src="@drawable/baseline_home_24"
-                android:contentDescription="@string/pendingSubjectItem"
                 android:padding="12dp"/>
 
             <ImageButton
@@ -522,7 +518,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/subjectReport"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
@@ -534,7 +529,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/audit"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
@@ -548,7 +542,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/logOut"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"

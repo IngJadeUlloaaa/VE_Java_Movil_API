@@ -1,16 +1,21 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp" /> <!-- Mantener esquinas redondeadas -->
+            <solid android:color="#33000000" /> <!-- Color de la sombra -->
+        </shape>
+    </item>
 
-    <gradient
-        android:angle="45"
-        android:startColor="#6100FF"
-        android:endColor="#AB47BC"
-        android:type="linear"
-        />
-
-    <!-- Radio de las esquinas -->
-    <corners android:radius="30dp" />
-
-
-
-</shape>
+    <!-- Gradiente principal -->
+    <item android:left="2.5dp" android:right="2.5dp" android:bottom="2.5dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp" />
+            <gradient
+                android:angle="45"
+                android:startColor="#6100FF"
+                android:endColor="#AB47BC"
+                android:type="linear" />
+        </shape>
+    </item>
+</layer-list>
