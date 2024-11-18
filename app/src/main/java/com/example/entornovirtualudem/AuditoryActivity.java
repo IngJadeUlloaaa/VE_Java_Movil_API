@@ -44,7 +44,7 @@ public class AuditoryActivity extends BaseActivity {
     private void fetchClasses(String token) {
         new Thread(() -> {
             try {
-                URL url = new URL("http://192.168.0.9:3000/api/classes");
+                URL url = new URL("http://192.168.23.104:3000/api/classes");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
                 connection.setRequestProperty("Authorization", "Bearer " + token);

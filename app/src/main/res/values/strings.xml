@@ -4,6 +4,7 @@
     <!--   info pic   -->
     <string name="welcomeVE">Welcome to Virtual Environment</string>
     <string name="auditTitle">Audit</string>
+    <string name="pendingSubjectTitle">Pending Subjects</string>
 
     <!-- audit -->
     <string name="first">A = APPROVED</string>

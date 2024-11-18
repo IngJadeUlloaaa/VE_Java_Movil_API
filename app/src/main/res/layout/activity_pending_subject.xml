@@ -9,9 +9,9 @@
 
     <!-- LinearLayout en la parte superior -->
     <LinearLayout
-        android:id="@+id/headerLayoutPendingSubject"
+        android:id="@+id/headerLayoutHome"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:background="@drawable/bordes_inferior_barra"
         android:orientation="horizontal"
         android:padding="16dp"
@@ -19,220 +19,128 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Imagen pequeña del perfil -->
+        <!-- Contenido del encabezado -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewPendingSubjectImage"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            app:cardCornerRadius="60dp"
-            app:cardElevation="4dp"
-            tools:ignore="ExtraText">
+            android:id="@+id/cardViewHomeImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="100dp">
 
-            <!-- Imagen circular con ajuste -->
             <ImageView
-                android:id="@+id/imageViewPendingSubject"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"/>
+                android:id="@+id/imageViewHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/circle_profile_bg"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Título centrado -->
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
             android:fontFamily="@font/lilita_one"
-            android:gravity="center"
-            android:text="pendintSubject"
+            android:gravity="start"
+            android:text="@string/pendingSubjectTitle"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-
     <!-- ScrollView para el contenido deslizable -->
     <ScrollView
-        android:layout_width="0dp"
+        android:id="@+id/scrollableContainer"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerLayoutPendingSubject">
+        app:layout_constraintTop_toBottomOf="@id/headerLayoutHome">
 
         <LinearLayout
+            android:id="@+id/pendingSubjectsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:background="@drawable/marco"
+            android:gravity="center"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="12dp">
 
-
-            <!-- Tabla de Asignaturas -->
-            <LinearLayout
+            <!-- Habilitar scroll horizontal -->
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="20dp">
+                tools:ignore="UselessParent">
 
-                <!-- Encabezados de la tabla -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TableLayout
+                    android:id="@+id/tablePendingSubjects"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/estilo_encabezado_tabla"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
+                    android:gravity="center"
+                    android:stretchColumns="1">
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/lilita_one"
-                        android:gravity="center"
-                        android:text="codigo"
-                        android:textColor="@color/black"
-                        android:textStyle="normal" />
+                    <!-- Encabezado de la tabla -->
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:fontFamily="@font/lilita_one"
-                        android:gravity="center"
-                        android:text="asignatura"
-                        android:textColor="@color/black"
-                        android:textStyle="normal" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/lilita_one"
-                        android:gravity="center"
-                        android:text="grado"
-                        android:textColor="@color/black"
-                        android:textStyle="normal" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/lilita_one"
-                        android:gravity="left"
-                        android:text="ofert"
-                        android:textColor="@color/black"
-                        android:textStyle="normal" />
-                </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="MAT101" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:text="Matemáticas" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="1" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="En curso"
-                        android:textColor="@color/green"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="EXP001" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:text="Expresion escrita" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="1" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="En curso"
-                        android:textColor="@color/green"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
+            </HorizontalScrollView>
         </LinearLayout>
-
     </ScrollView>
-
 
     <!-- Barra de menú fija en la parte inferior -->
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarBottomPending_subject"
+        android:id="@+id/toolbarBottomHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@drawable/bordes_superior_barra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="18dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/action_profile"
+                android:id="@+id/icnPendingSubjects"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
@@ -240,21 +148,20 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
-                android:src="@drawable/profile_icon" />
+                android:src="@drawable/icn_pending" />
 
             <ImageButton
-                android:id="@+id/action_pending_subject"
+                android:id="@+id/icnAudit"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
-                android:padding="12dp"
-                android:src="@drawable/clock_icon" />
+                android:src="@drawable/icn_audit" />
 
             <ImageButton
-                android:id="@+id/action_home"
+                android:id="@+id/icnHome"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
@@ -262,10 +169,10 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
-                android:src="@drawable/baseline_home_24" />
+                android:src="@drawable/icn_home" />
 
             <ImageButton
-                android:id="@+id/action_subject_report"
+                android:id="@+id/icnReportCard"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
@@ -273,10 +180,10 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
-                android:src="@drawable/book_icn" />
+                android:src="@drawable/icn_subjects" />
 
             <ImageButton
-                android:id="@+id/action_audit"
+                android:id="@+id/icnProfile"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
@@ -284,20 +191,7 @@
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
-                android:src="@drawable/auditoriaicn" />
-
-            <ImageButton
-                android:id="@+id/action_logout"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:background="?attr/selectableItemBackground"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:src="@drawable/ic_logout_with_background" />
-
-
+                android:src="@drawable/icn_profile" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
