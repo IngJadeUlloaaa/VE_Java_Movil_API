@@ -43,7 +43,7 @@ public class PendingSubjectActivity extends BaseActivity {
     private void fetchClasses(String token) {
         new Thread(() -> {
             try {
-                URL url = new URL("http://192.168.23.104:3000/api/211572/pendingSubjects");
+                URL url = new URL("http://192.168.23.39:3000/api/211572/pendingSubjects");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
                 connection.setRequestProperty("Authorization", "Bearer " + token);

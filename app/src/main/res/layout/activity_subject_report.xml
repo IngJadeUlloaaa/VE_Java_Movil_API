@@ -9,9 +9,9 @@
 
     <!-- LinearLayout en la parte superior -->
     <LinearLayout
-        android:id="@+id/headerLayoutSubjectReport"
+        android:id="@+id/headerLayoutHome"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:background="@drawable/bordes_inferior_barra"
         android:orientation="horizontal"
         android:padding="16dp"
@@ -19,535 +19,179 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Imagen pequeña del perfil -->
+        <!-- Contenido del encabezado -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewSubjectReportImage"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            app:cardCornerRadius="60dp"
-            app:cardElevation="4dp">
+            android:id="@+id/cardViewHomeImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="100dp">
 
-            <!-- Imagen circular con ajuste -->
             <ImageView
-                android:id="@+id/imageViewSubjectReport"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/imageViewHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/circle_profile_bg"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
+                android:src="@drawable/profile" />
         </androidx.cardview.widget.CardView>
 
-        <!-- Título centrado -->
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="subjectReport"
             android:fontFamily="@font/lilita_one"
+            android:gravity="start"
+            android:text="@string/subjectReportCardTitle"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Scroll -->
     <ScrollView
-        android:layout_width="0dp"
+        android:id="@+id/scrollableContainer"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerLayoutSubjectReport">
+        app:layout_constraintTop_toBottomOf="@id/headerLayoutHome">
 
         <LinearLayout
+            android:id="@+id/subjectReportCardContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/marco"
+            android:gravity="center"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="12dp">
 
-            <!-- Título -->
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_color_radius"
-                android:paddingBottom="16dp"
-                android:textAlignment="center"
-                android:text="matricula"
-                android:fontFamily="@font/lilita_one"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="normal" />
-
+            <!-- Habilitar scroll horizontal -->
             <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            <!-- Contenedor de Información -->
-            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                tools:ignore="UselessParent">
 
-                <!-- Campos de la Boleta -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TableLayout
+                    android:id="@+id/tableSubjectReportCard"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingTop="2dp">
+                    android:gravity="center"
+                    android:stretchColumns="1">
 
-                    <!-- Encabezados de la tabla -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/estilo_encabezado_tabla"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
+                    <!-- Encabezado de la tabla -->
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:gravity="center"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/lilita_one"
-                            android:textStyle="normal"
-                            android:text="grupoClass"
-                             />
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:gravity="center"
-                            android:textColor="@color/black"
-                            android:text="asignatura"
-                            android:fontFamily="@font/lilita_one"
-                            android:textStyle="normal" />
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:gravity="center"
-                            android:textColor="@color/black"
-                            android:text="classDay"
-                            android:fontFamily="@font/lilita_one"
-                            android:textStyle="normal" />
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="classTime"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/lilita_one"
-                            android:textStyle="normal" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:textColor="@color/black"
-                            android:text="aulaClass"
-                            android:fontFamily="@font/lilita_one"
-                            android:textStyle="normal" />
-
-                        <TextView
-                            android:layout_width="20dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:fontFamily="@font/lilita_one"
-                            android:gravity="center"
-                            android:text="classRoom"
-                            android:textColor="@color/black"
-                            android:textStyle="normal" />
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="MI12C" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:text="Simulacion de sistemas" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="Domingo" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="08:00am" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="AU2" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="ex44p4q" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="MI12C" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:text="Gestion del medio ambiente" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="Domingo" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="10:30am" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="A06" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="ybhrp6d" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                    </TableRow>
+                </TableLayout>
             </HorizontalScrollView>
-
-            <!-- Correo institucional y contraseña -->
-            <TextView
-                android:id="@+id/textViewCorreo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:text="Correo institucional: ejemplo@udem.edu.ni"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:text="Contraseña: Est!12345" />
-
-            <TextView
-                android:layout_width="360dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/bg_color_radius"
-                android:text="SubjectReportInformation"
-                android:textColor="@color/white"
-                android:fontFamily="@font/lilita_one"
-                android:textStyle="normal"/>
-
-            <!-- Título de Notas -->
-            <TextView
-                android:layout_width="350dp"
-                android:textAlignment="center"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_color_radius"
-                android:paddingBottom="16dp"
-                android:text="/calificaciones"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:fontFamily="@font/lilita_one"
-                android:textStyle="normal" />
-
-            <!-- Contenedor de Notas -->
-
-            <LinearLayout
-                android:id="@+id/calificaciones"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="2dp">
-
-                <!-- Encabezados de la tabla -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/estilo_encabezado_tabla"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:text="@/codigo"
-                        android:fontFamily="@font/lilita_one"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:text="@/asignatura"
-                        android:fontFamily="@font/lilita_one"
-                        android:textStyle="normal"/>
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:text="@/nota"
-                        android:fontFamily="@font/lilita_one"
-                        android:textStyle="normal" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:text="@/rescate"
-                        android:fontFamily="@font/lilita_one"
-                        android:textStyle="normal" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="FB-112" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Estudio del trabajo" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="88" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="FE-164" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="formulacion y evaluacion de proyectos" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="95" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center" />
-
-                </LinearLayout>
-            </LinearLayout>
-
         </LinearLayout>
-
     </ScrollView>
 
     <!-- Barra de menú fija en la parte inferior -->
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarBottomSubjectReport"
-        android:layout_width="403dp"
-        android:layout_height="57dp"
+        android:id="@+id/toolbarBottomHome"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:background="@drawable/bordes_superior_barra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="18dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/action_profile"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="?attr/selectableItemBackground"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:src="@drawable/profile_icon" />
-
-            <ImageButton
-                android:id="@+id/action_pending_subject"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="?attr/selectableItemBackground"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:src="@drawable/clock_icon" />
-
-            <ImageButton
-                android:id="@+id/action_home"
+                android:id="@+id/icnPendingSubjects"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
-                android:background="?attr/selectableItemBackground"
-                android:src="@drawable/baseline_home_24"
-                android:padding="12dp"/>
+                android:padding="12dp"
+                android:src="@drawable/icn_pending" />
 
             <ImageButton
-                android:id="@+id/action_subject_report"
+                android:id="@+id/icnAudit"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:src="@drawable/icn_audit" />
+
+            <ImageButton
+                android:id="@+id/icnHome"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
-                android:src="@drawable/book_icn" />
+                android:src="@drawable/icn_home" />
 
             <ImageButton
-                android:id="@+id/action_audit"
+                android:id="@+id/icnReportCard"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
-                android:src="@drawable/auditoriaicn"
-                tools:layout_editor_absoluteX="-37dp"
-                tools:layout_editor_absoluteY="668dp" />
+                android:src="@drawable/icn_subjects" />
 
             <ImageButton
-                android:id="@+id/action_logout"
+                android:id="@+id/icnProfile"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
-                android:src="@drawable/ic_logout_with_background" />
-
-
+                android:src="@drawable/icn_profile" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
