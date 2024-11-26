@@ -20,7 +20,7 @@ public class BaseActivity extends AppCompatActivity {
      * Configura la barra de menú personalizada con ImageButton.
      * Este método se llamará en las actividades que necesiten la barra de menú.
      */
-    protected void setupCustomBottomMenu(int toolbarId) {
+   /* protected void setupCustomBottomMenu(int toolbarId) {
         Toolbar bottomToolbar = findViewById(toolbarId);
 
         if (bottomToolbar != null) {

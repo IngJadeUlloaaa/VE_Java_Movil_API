@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginUser(String code, String passwd) {
         try {
-            URL url = new URL("http://192.168.23.39:3000/api/auth/users/login");
+            URL url = new URL("http://192.168.137.222:3000/api/auth/users/login");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setDoOutput(true);
             urlConnection.setRequestMethod("POST");

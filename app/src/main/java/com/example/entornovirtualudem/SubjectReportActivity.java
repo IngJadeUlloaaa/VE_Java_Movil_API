@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -47,12 +48,15 @@ public class SubjectReportActivity extends BaseActivity {
         } else {
             Toast.makeText(this, "No se encontró el token de acceso. Inicia sesión nuevamente.", Toast.LENGTH_SHORT).show();
         }
+
+        // Configurar navegación del menú
+        setupMenuNavigation();
     }
 
     private void fetchClasses(String token) {
         new Thread(() -> {
             try {
-                URL url = new URL("http://192.168.23.39:3000/api/211572/subjectReportCard");
+                URL url = new URL("http://192.168.137.222:3000/api/subjectReportCard");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
                 connection.setRequestProperty("Authorization", "Bearer " + token);
@@ -126,5 +130,55 @@ public class SubjectReportActivity extends BaseActivity {
         cell.setTextSize(isHeader ? 22 : 18);
         cell.setBackgroundResource(isHeader ? R.drawable.table_header_bg : R.drawable.table_cell_bg);
         row.addView(cell);
+    }
+
+    private void setupMenuNavigation() {
+        // Obtener referencias a los botones del menú
+        ImageButton btnPendingSubjects = findViewById(R.id.icnPendingSubjects);
+        ImageButton btnAudit = findViewById(R.id.icnAudit);
+        ImageButton btnHome = findViewById(R.id.icnHome);
+        ImageButton btnReportCard = findViewById(R.id.icnReportCard);
+        ImageButton btnProfile = findViewById(R.id.icnProfile);
+
+        // Configurar listeners para cada botón
+        btnPendingSubjects.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateTo(PendingSubjectActivity.class);
+            }
+        });
+
+        btnAudit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateTo(AuditoryActivity.class);
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateTo(HomeActivity.class);
+            }
+        });
+
+        btnReportCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateTo(SubjectReportActivity.class);
+            }
+        });
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigateTo(UserInfoActivity.class);
+            }
+        });
+    }
+
+    private void navigateTo(Class<?> targetActivity) {
+        Intent intent = new Intent(SubjectReportActivity.this, targetActivity);
+        startActivity(intent);
     }
 }

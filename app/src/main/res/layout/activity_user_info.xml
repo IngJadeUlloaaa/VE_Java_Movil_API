@@ -9,9 +9,9 @@
 
     <!-- LinearLayout en la parte superior -->
     <LinearLayout
-        android:id="@+id/headerLayoutProfile"
+        android:id="@+id/headerLayoutHome"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:background="@drawable/bordes_inferior_barra"
         android:orientation="horizontal"
         android:padding="16dp"
@@ -19,334 +19,304 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Imagen pequeña del perfil -->
+        <!-- Imagen del perfil -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardViewUserInfoImage"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            app:cardCornerRadius="60dp"
-            app:cardElevation="4dp">
+            android:id="@+id/cardViewHomeImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="100dp">
 
-            <!-- Imagen circular con ajuste -->
             <ImageView
-                android:id="@+id/imageViewUserInfo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
+                android:id="@+id/imageViewHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@drawable/circle_profile_bg"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
+                android:src="@drawable/profile" />
         </androidx.cardview.widget.CardView>
 
         <!-- Título centrado -->
         <TextView
             android:id="@+id/textViewTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:gravity="center"
             android:fontFamily="@font/lilita_one"
-            android:text="profile"
+            android:gravity="center"
+            android:text="@string/profileTitle"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="38sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <!-- ScrollView que contiene el LinearLayout -->
-    <ScrollView
-        android:layout_width="match_parent"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/scrollHome"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/toolbarBottomUserInfo"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/toolbarBottomHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/headerLayoutProfile">
+        app:layout_constraintTop_toBottomOf="@id/headerLayoutHome">
 
-        <!-- Contenedor LinearLayout para los EditText y el Botón -->
+        <!-- Contenedor principal -->
         <LinearLayout
-            android:id="@+id/linearLayoutContainer"
+            android:id="@+id/profileContainerLinear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:orientation="vertical">
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <!-- Contenedor con borde redondeado para la imagen -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewUserInfoPerfilImage"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="50dp"
-                app:cardCornerRadius="60dp"
-                app:cardElevation="4dp">
+            <!-- Career -->
 
-                <!-- Imagen circular con ajuste -->
-                <ImageView
-                    android:id="@+id/imageViewUserInfoPerfil"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/circle_profile_bg"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/image_profile_ic" /> <!-- Fondo con borde -->
-            </androidx.cardview.widget.CardView>
-
-
-            <!-- Carrera -->
             <TextView
-                android:id="@+id/textViewCarrera"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="16dp"
-                android:text="carrera"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
+                android:text="Career"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewCarreraValue"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewCareer"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
-                android:textStyle="normal"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:text="Ingeniería en Sistemas"
-                android:textSize="24dp" />
+                android:textColor="@color/bg_input"
+                android:textSize="20sp" />
 
 
-            <!-- Turno -->
+            <!-- Shift -->
+
+
             <TextView
-                android:id="@+id/textViewTurno"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:layout_marginTop="22dp"
-                android:text="turno"
+                android:text="Shift"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewTurnoValue"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewShift"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:textStyle="normal"
-                android:text="Matutino"
-                android:textSize="24dp" />
+                android:textColor="@color/bg_input"
+                android:textSize="20sp" />
 
-            <!-- Número de Carnet -->
+
+            <!-- Address -->
+
+
             <TextView
-                android:id="@+id/textViewNumeroCarnet"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:layout_marginTop="22dp"
-                android:text="carnet"
+                android:text="Address"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewNumeroCarnetValue"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewAddress"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:textStyle="normal"
-                android:text="123456"
-                android:textSize="24dp" />
+                android:textColor="@color/bg_input"
+                android:textSize="20sp" />
 
-            <!-- Nombre Completo -->
+
+            <!-- Phone -->
+
+
             <TextView
-                android:id="@+id/textViewNombreCompleto"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="22dp"
-                android:text="nombre"
+                android:text="Phone"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewNombreCompletoValue"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewPhone"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:textStyle="normal"
-                android:text="texto de prueba"
-                android:textSize="24dp" />
+                android:textColor="@color/bg_input"
+                android:textSize="20sp" />
 
-            <!-- teléfono -->
+
+            <!-- Full Name -->
+
+
             <TextView
-                android:id="@+id/textViewTelefono"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="22dp"
-                android:text="telefono"
+                android:text="Full Name"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewTelefonoValue"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewFullName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:textStyle="normal"
-                android:text="0110201002"
-                android:textSize="24dp" />
+                android:textColor="@color/bg_input"
+                android:textSize="20sp" />
 
-            <!-- Correo -->
+
+            <!-- Card Number -->
+
             <TextView
-                android:id="@+id/textViewCorreo"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="22dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:text="correo"
+                android:text="Card Number"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textViewCorreoValue"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewCardNumber"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/lilita_one"
-                android:textStyle="normal"
-                android:text="texto.prueba@example.com"
-                android:textSize="24dp" />
+                android:textColor="@color/bg_input"
+                android:textSize="20sp" />
 
-            <!-- Botón Actualizar Datos dentro del LinearLayout -->
+
+            <!-- Email Address -->
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/lilita_one"
+                android:text="Email Address"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewEmailAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/lilita_one"
+                android:textColor="@color/bg_input"
+                android:textSize="20sp" />
+
+            <!-- Update Button -->
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/buttonActualizar"
-                android:layout_width="160dp"
+                android:id="@+id/updateBtn"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/lilita_one"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_background_main"
+                android:fontFamily="@font/orelegaone_regular"
+                android:text="@string/updateBtn"
                 android:textColor="@color/white"
-                android:background="@drawable/gradient_bg_btn_login"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
+
     </ScrollView>
 
     <!-- Barra de menú fija en la parte inferior -->
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarBottomUserInfo"
+        android:id="@+id/toolbarBottomHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@drawable/bordes_superior_barra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="18dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/action_profile"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="?attr/selectableItemBackground"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:src="@drawable/profile_icon"
-
-                android:padding="12dp"
-                />
-
-            <ImageButton
-                android:id="@+id/action_pending_subject"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:background="?attr/selectableItemBackground"
-                android:src="@drawable/clock_icon"
-
-                android:padding="12dp"/>
-
-            <ImageButton
-                android:id="@+id/action_home"
+                android:id="@+id/icnPendingSubjects"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
                 android:background="?attr/selectableItemBackground"
-                android:src="@drawable/baseline_home_24"
-
-                android:padding="12dp"/>
-
-            <ImageButton
-                android:id="@+id/action_subject_report"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:background="?attr/selectableItemBackground"
-                android:src="@drawable/book_icn"
-
-                android:padding="12dp"/>
-
-            <ImageButton
-                android:id="@+id/action_audit"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="?attr/selectableItemBackground"
-
                 android:minWidth="48dp"
                 android:minHeight="48dp"
                 android:padding="12dp"
-                android:src="@drawable/auditoriaicn"
-                tools:layout_editor_absoluteX="-37dp"
-                tools:layout_editor_absoluteY="668dp" />
+                android:src="@drawable/icn_pending" />
 
             <ImageButton
-                android:id="@+id/action_logout"
+                android:id="@+id/icnAudit"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
+                android:src="@drawable/icn_audit" />
+
+            <ImageButton
+                android:id="@+id/icnHome"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
                 android:background="?attr/selectableItemBackground"
-                android:src="@drawable/ic_logout_with_background"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/icn_home" />
 
-                android:padding="12dp"/>
+            <ImageButton
+                android:id="@+id/icnReportCard"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/icn_subjects" />
 
-
+            <ImageButton
+                android:id="@+id/icnProfile"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:src="@drawable/icn_profile" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 

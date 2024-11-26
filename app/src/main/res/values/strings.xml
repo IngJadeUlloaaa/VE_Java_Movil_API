@@ -4,6 +4,8 @@
     <!--   info pic   -->
     <string name="welcomeVE">Welcome to Virtual Environment</string>
     <string name="auditTitle">Audit</string>
+    <string name="profileTitle">Profile</string>
+    <string name="updateDataTitle">Update Data</string>
     <string name="pendingSubjectTitle">Pending Subjects</string>
     <string name="subjectReportCardTitle">Subject Report Card</string>
 
@@ -14,5 +16,7 @@
     <string name="titleLogin">Login</string>
     <string name="signInLogin">Sign in</string>
     <string name="getIn">Get Started</string>
+    <string name="updateBtn">Update</string>
+    <string name="updateBtnData">Upload</string>
     <string name="developer">by: Carlos Ulloa</string>
 </resources>
